@@ -1,40 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Room</title>
-    <link rel="stylesheet" href="style/room.css">
-    <link rel="stylesheet" href="style/main.css">
-</head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Phòng</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='style/main.css'>
 
+    <link rel='stylesheet' type='text/css' media='screen' href='style/room.css'>
+</head>
 <body>
+
     <header id="nav">
-        <div class="nav--list">
+       <div class="nav--list">
+            <button id="members__button">
+               <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M24 18v1h-24v-1h24zm0-6v1h-24v-1h24zm0-6v1h-24v-1h24z" fill="#ede0e0"><path d="M24 19h-24v-1h24v1zm0-6h-24v-1h24v1zm0-6h-24v-1h24v1z"/></svg>
+            </button>
             <a href="Login.html">
                 <h3 id="logo">
                     <img>
                     <span>DuongVuIT</span>
                 </h3>
             </a>
-        </div>
+       </div>
+
         <div id="nav__links">
-            <button id="chat__button"><svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd"
-                    fill="#ede0e0" clip-rule="evenodd">
-                    <path
-                        d="M24 20h-3v4l-5.333-4h-7.667v-4h2v2h6.333l2.667 2v-2h3v-8.001h-2v-2h4v12.001zm-15.667-6l-5.333 4v-4h-3v-14.001l18 .001v14h-9.667zm-6.333-2h3v2l2.667-2h8.333v-10l-14-.001v10.001z" />
-                </svg></button>
+            <button id="chat__button"><svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" fill="#ede0e0" clip-rule="evenodd"><path d="M24 20h-3v4l-5.333-4h-7.667v-4h2v2h6.333l2.667 2v-2h3v-8.001h-2v-2h4v12.001zm-15.667-6l-5.333 4v-4h-3v-14.001l18 .001v14h-9.667zm-6.333-2h3v2l2.667-2h8.333v-10l-14-.001v10.001z"/></svg></button>
             <a class="nav__link" id="create__room__btn" href="Login.html">
                 Tạo phòng mới
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#ede0e0" viewBox="0 0 24 24">
-                    <path
-                        d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6 13h-5v5h-2v-5h-5v-2h5v-5h2v5h5v2z" />
-                </svg>
+               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#ede0e0" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6 13h-5v5h-2v-5h-5v-2h5v-5h2v5h5v2z"/></svg>
             </a>
         </div>
-
     </header>
+
     <main class="container">
         <div id="room__container">
 
@@ -87,5 +85,9 @@
     </main>
     
 </body>
-
+<script type="text/javascript" src="js/AgoraRTC_N-4.11.0.js"></script>
+<script type="text/javascript" src="js/agora-rtm-sdk-1.4.4.js"></script>
+<script type="text/javascript" src="js/room.js"></script>
+<script type="text/javascript" src="js/room_rtm.js"></script>
+<script type="text/javascript" src="js/room_rtc.js"></script>
 </html>

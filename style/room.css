@@ -75,7 +75,7 @@
   
   #messages__container {
     height: calc(100vh - 85px);
-    background-color: #3a2746;
+    background-color: black;
     right: 0;
     position: absolute;
     width: 100%;
