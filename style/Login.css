@@ -53,7 +53,7 @@
   .form__field__wrapper button[type='submit'] {
     margin-top: 32px;
     cursor: pointer;
-    background-color: #957c56;
+    background-color: black;
     border: none;
     color: #fff;
     font-size: 16px;
