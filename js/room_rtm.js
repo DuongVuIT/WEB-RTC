@@ -1,11 +1,10 @@
 
 let handleMemberJoined = async (MemberId) => {
-    console.log('Có người dùng mới vào phòng:', MemberId)
+    console.log('Có người mới vào phòng',MemberId)
     addMemberToDom(MemberId)
 
     let members = await channel.getMembers()
     updateMemberTotal(members)
-
 
     let { name } = await rtmClient.getUserAttributesByKeys(MemberId, ['name'])
     addBotMessageToDom(`Chào ${name} đã đến với phòng của chúng tôi`)
@@ -39,7 +38,7 @@ let handleMemberLeft = async (MemberId) => {
 let removeMemberFromDom = async (MemberId) => {
     let memberWrapper = document.getElementById(`member__${MemberId}__wrapper`)
     let name = memberWrapper.getElementsByClassName('member_name')[0].textContent
-    addBotMessageToDom(`${name} đã rời khỏi phòng.`)
+    addBotMessageToDom(`${name} đã rời khỏi phòng`)
 
     memberWrapper.remove()
 }
@@ -52,11 +51,11 @@ let getMembers = async () => {
     }
 }
 
-let handleChannelMessage = async (messageData, MemberId) => {
-    console.log('Có tin nhắn mới')
+let handleChannelMessage = async (messageData) => {
+   
     let data = JSON.parse(messageData.text)
 
-    if (data.type === 'chat') {
+    if (data.type === 'text') {
         addMessageToDom(data.displayName, data.message)
     }
 
@@ -78,7 +77,7 @@ let sendMessage = async (e) => {
     e.preventDefault()
 
     let message = e.target.message.value
-    channel.sendMessage({ text: JSON.stringify({ 'type': 'chat', 'message': message, 'displayName': displayName }) })
+    channel.sendMessage({ text: JSON.stringify({ 'type': 'text', 'message': message, 'displayName': displayName }) })
     addMessageToDom(displayName, message)
     e.target.reset()
 }
@@ -107,7 +106,7 @@ let addBotMessageToDom = (botMessage) => {
 
     let newMessage = `<div class="message__wrapper">
                         <div class="message__body__bot">
-                            <strong class="message__author__bot">Bot chat tự động được khởi tạo</strong>
+                            <strong class="message__author__bot">BOT THÔNG BÁO TỰ ĐỘNG</strong>
                             <p class="message__text__bot">${botMessage}</p>
                         </div>
                     </div>`
